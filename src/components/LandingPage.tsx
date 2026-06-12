@@ -5,12 +5,11 @@ import WhatsAppIcon from './WhatsAppIcon'
 
 function LandingPage() {
   const { toastMessage } = useWhatsAppRedirect()
-  const { ticker, brand, motivational, form, operationsInfo, trustBadges } =
-    LANDING_CONTENT
+  const { ticker, brand, motivational, bonusBanner, form } = LANDING_CONTENT
 
   return (
     <>
-      <RedirectToast message={toastMessage} />
+      {toastMessage && <RedirectToast message={toastMessage} />}
 
       <div className="jackpotTicker">
         {ticker.label} <span>{ticker.highlight}</span>
@@ -32,6 +31,8 @@ function LandingPage() {
             {motivational.suffix}
           </p>
 
+          <p className="bonusBanner">{bonusBanner}</p>
+
           <section className="form" aria-label="Cargar saldo por WhatsApp">
             <h2 className="formTitle">{form.title}</h2>
             <p className="lead">{form.lead}</p>
@@ -51,6 +52,7 @@ function LandingPage() {
             </a>
           </section>
 
+          {/* operationsInfo y trustBadges comentados temporalmente
           <details
             className="liveStats"
             open
@@ -94,6 +96,7 @@ function LandingPage() {
               </div>
             ))}
           </div>
+          */}
         </section>
       </main>
     </>

@@ -1,9 +1,11 @@
 export const LANDING_CONFIG = {
   whatsapp: {
     phone: '5491130085226',
-    message: 'Hola, quiero crear mi usuario y cargar saldo en Win Big.'
+    message: 'Hola, quiero juegar en su plataforma, puedes crear un usuario?'
   },
+  redirectEnabled: true,
   redirectDelaySeconds: 5,
+  showOperationsInfo: false,
   content: {
     ticker: {
       label: 'Cargas activas',
@@ -12,48 +14,49 @@ export const LANDING_CONFIG = {
     brand: {
       hotBadge: '🔥 EN VIVO',
       title: 'WIN BIG',
-      subtitle: 'CASINO'
+      subtitle: 'Divertite con nosotros'
     },
     motivational: {
       prefix: '✨ Tu suerte te espera,',
       highlight: '¡Este es tu momento!',
       suffix: '✨'
     },
+    bonusBanner: '🎉 BONOS EXCLUSIVOS PARA NUEVOS USUARIOS 🎉',
     form: {
       title: 'Carga de Saldo',
-      lead: 'Habla con un cajero oficial para crear tu cuenta y cargar saldo.',
+      lead: 'Habla con un asesor para crear tu cuenta y jugar con nosotros.',
       buttonLabel: 'Crea tu usuario',
       quickInfo: [
-        { label: 'Carga minima', value: '$ 3.000' },
-        { label: 'Retiro minimo', value: '$ 6.000' }
+        { label: 'Carga minima', value: '$ 2.000' },
+        { label: 'Retiro minimo', value: '$ 5.000' }
       ]
     },
-    operationsInfo: {
-      summary: 'Informacion sobre cargas y retiros',
-      tiers: [
-        {
-          conditionLines: ['Si cargas menos', 'De $ 30.000'],
-          withdrawalLabel: 'Retiros hasta',
-          amount: '$ 100.000',
-          period: 'POR DIA'
-        },
-        {
-          conditionLines: ['Si cargas mas', 'De $ 30.000'],
-          withdrawalLabel: 'Retiros hasta',
-          amount: '$ 200.000',
-          period: 'POR DIA'
-        }
-      ],
-      paymentMethodLines: [
-        'Cargas por transferencia bancaria',
-        'O cualquier cryptomoneda'
-      ]
-    },
-    trustBadges: [
-      { icon: '🔒', label: 'Retiros Asegurados' },
-      { icon: '⚡', label: 'Pagos Instantaneos' },
-      { icon: '🎁', label: 'Bonos Exclusivos' }
-    ]
+    // operationsInfo: {
+    //   summary: 'Informacion sobre cargas y retiros',
+    //   tiers: [
+    //     {
+    //       conditionLines: ['Si cargas menos', 'De $ 30.000'],
+    //       withdrawalLabel: 'Retiros hasta',
+    //       amount: '$ 100.000',
+    //       period: 'POR DIA'
+    //     },
+    //     {
+    //       conditionLines: ['Si cargas mas', 'De $ 30.000'],
+    //       withdrawalLabel: 'Retiros hasta',
+    //       amount: '$ 200.000',
+    //       period: 'POR DIA'
+    //     }
+    //   ],
+    //   paymentMethodLines: [
+    //     'Cargas por transferencia bancaria',
+    //     'O cualquier cryptomoneda'
+    //   ]
+    // },
+    // trustBadges: [
+    //   { icon: '🔒', label: 'Retiros Asegurados' },
+    //   { icon: '⚡', label: 'Pagos Instantaneos' },
+    //   { icon: '🎁', label: 'Bonos Exclusivos' }
+    // ]
   } as const
 }
 
@@ -65,6 +68,8 @@ export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURICom
   WHATSAPP_MESSAGE
 )}`
 
+export const REDIRECT_ENABLED = LANDING_CONFIG.redirectEnabled
 export const REDIRECT_DELAY_SECONDS = LANDING_CONFIG.redirectDelaySeconds
+export const SHOW_OPERATIONS_INFO = LANDING_CONFIG.showOperationsInfo
 
 export const LANDING_CONTENT = LANDING_CONFIG.content
