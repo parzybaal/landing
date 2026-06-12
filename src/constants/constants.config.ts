@@ -1,9 +1,9 @@
 export const LANDING_CONFIG = {
   whatsapp: {
-    phone: '5491130085226',
-    message: 'Hola, quiero juegar en su plataforma, puedes crear un usuario?'
+    phone: '5491127311643',
+    message: 'Hola, quiero juegar en su plataforma, puedes crear mi usuario por favor?'
   },
-  redirectEnabled: true,
+  redirectEnabled: false,
   redirectDelaySeconds: 5,
   showOperationsInfo: false,
   content: {
@@ -52,11 +52,11 @@ export const LANDING_CONFIG = {
     //     'O cualquier cryptomoneda'
     //   ]
     // },
-    // trustBadges: [
-    //   { icon: '🔒', label: 'Retiros Asegurados' },
-    //   { icon: '⚡', label: 'Pagos Instantaneos' },
-    //   { icon: '🎁', label: 'Bonos Exclusivos' }
-    // ]
+    trustBadges: [
+      { icon: '🔒', label: 'Retiros Asegurados' },
+      { icon: '⚡', label: 'Pagos Instantaneos' },
+      { icon: '🎁', label: 'Bonos Exclusivos' }
+    ]
   } as const
 }
 

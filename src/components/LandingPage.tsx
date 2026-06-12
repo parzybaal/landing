@@ -5,7 +5,8 @@ import WhatsAppIcon from './WhatsAppIcon'
 
 function LandingPage() {
   const { toastMessage } = useWhatsAppRedirect()
-  const { ticker, brand, motivational, bonusBanner, form } = LANDING_CONTENT
+  const { ticker, brand, motivational, bonusBanner, form, trustBadges } =
+    LANDING_CONTENT
 
   return (
     <>
@@ -52,7 +53,7 @@ function LandingPage() {
             </a>
           </section>
 
-          {/* operationsInfo y trustBadges comentados temporalmente
+          {/* operationsInfo comentado temporalmente
           <details
             className="liveStats"
             open
@@ -87,6 +88,7 @@ function LandingPage() {
               </div>
             </div>
           </details>
+          */}
 
           <div className="trustBadges">
             {trustBadges.map(badge => (
@@ -96,7 +98,6 @@ function LandingPage() {
               </div>
             ))}
           </div>
-          */}
         </section>
       </main>
     </>
