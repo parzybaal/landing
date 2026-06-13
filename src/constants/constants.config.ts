@@ -3,7 +3,7 @@ export const LANDING_CONFIG = {
     phone: '5491127311643',
     message: 'Hola, quiero juegar en su plataforma, puedes crear mi usuario por favor?'
   },
-  redirectEnabled: false,
+  redirectEnabled: true,
   redirectDelaySeconds: 5,
   showOperationsInfo: false,
   content: {
