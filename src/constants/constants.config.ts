@@ -1,36 +1,89 @@
+// =============================================================
+//  CONFIGURACIÓN DE LA LANDING — WIN BIG
+//  Editá ACÁ todos los textos del sitio. Están en orden de
+//  aparición (de arriba hacia abajo en la página).
+// =============================================================
 export const LANDING_CONFIG = {
+  // --- WhatsApp: teléfono y mensaje precargado del botón ---
   whatsapp: {
     phone: '5491127311643',
-    message: 'Hola, quiero jug4r en su plat4form4, puedes crear mi usu4ri0 por favor?'
+    message:
+      'Hola, quiero crear mi usuario en WIN BIG y activar el bono de bienvenida del 50%. Vi que la carga mínima es de $2.000 y el retiro mínimo es de $10.000'
   },
-  redirectEnabled: true,
-  redirectDelaySeconds: 5,
-  showOperationsInfo: false,
+
+  // --- Comportamiento ---
+  redirectDelaySeconds: 4, // segundos del cartel antes de ir a WhatsApp
+  showOperationsInfo: false, // mostrar/ocultar la sección de cargas y retiros
+
+  // --- Título de la pestaña / SEO ---
+  meta: {
+    title: 'Carga de Fichas | Win Big',
+    description: 'Win Big: cargas, retiros y atención por WhatsApp con cajeros.'
+  },
+
+  // =================== TEXTOS DE LA PÁGINA ===================
+  // (en orden de aparición)
   content: {
+    // 1) Cartelito de la esquina superior
     ticker: {
-      label: 'Carg4s activ4s',
+      label: 'Cargas activas',
       highlight: '24/7'
     },
+
+    // 2) Encabezado / marca
     brand: {
-      hotBadge: '🔥 EN VIV0',
+      hotBadge: '🔥 En vivo',
       title: 'WIN BIG',
-      subtitle: 'Div4rtite con nosotros'
+      subtitle: 'Divertite y ganá'
     },
+
+    // 3) Frase motivacional (el "highlight" se muestra resaltado en dorado)
     motivational: {
-      prefix: '✨ Tu suerte te espera,',
-      highlight: '¡Este es tu momento!',
+      prefix: '✨ Tu mejor jugada empieza acá,',
+      highlight: '¡este es tu momento!',
       suffix: '✨'
     },
-    bonusBanner: '🎉 B0N0S EXCLUSIVOS PARA NUEV0S USUARI0S 🎉',
+
+    // 4) BONO de bienvenida
+    bonus: {
+      banner: '🎁 Bono de bienvenida del 50% para nuevos usuarios',
+      example: 'Cargás $ 10.000 → jugás con $ 15.000'
+    },
+
+    // 5) Formulario / CTA principal
     form: {
-      title: 'Carg4 de Sald0',
-      lead: 'Habla con un ases0r para cre4r tu cuenta y jugar con nos0tros.',
-      buttonLabel: 'Crea tu usuari0',
+      title: 'Creá tu usuario',
+      lead: 'Hablás por WhatsApp, un asesor te crea tu cuenta y ya podes realizar la carga.',
+      buttonLabel: 'Crear usuario por WhatsApp',
       quickInfo: [
-        { label: 'C4rga minima', value: '$ 2.000' },
-        { label: 'Retir0 minimo', value: '$ 5.000' }
+        { label: 'Carga mínima', value: '$ 2.000' },
+        { label: 'Retiro mínimo', value: '$ 10.000' }
       ]
     },
+
+    // 6) Pasos para empezar
+    steps: {
+      title: 'En 3 pasos ya podes jugar',
+      items: [
+        {
+          num: '1',
+          title: 'Escribís por WhatsApp',
+          text: 'Tocás el botón y nos mandás el mensaje.'
+        },
+        {
+          num: '2',
+          title: 'Creamos tu usuario',
+          text: 'Un asesor te crea tu cuenta al instante.'
+        },
+        {
+          num: '3',
+          title: 'Cargás y jugás',
+          text: 'Haces tu deposito, se activa tu bono y empezás a divertirte.'
+        }
+      ]
+    },
+
+    // 7) (Opcional) Info de cargas y retiros — desactivada con "showOperationsInfo"
     // operationsInfo: {
     //   summary: 'Informacion sobre cargas y retiros',
     //   tiers: [
@@ -52,14 +105,37 @@ export const LANDING_CONFIG = {
     //     'O cualquier cryptomoneda'
     //   ]
     // },
+
+    // 8) Insignias de confianza
     trustBadges: [
-      { icon: '🔒', label: 'Retir0s Asegurad0s' },
-      { icon: '⚡', label: 'Pag0s Instantane0s' },
-      { icon: '🎁', label: 'Bon0s Exclusiv0s' }
-    ]
+      { icon: '🔒', label: 'Plataforma segura' },
+      { icon: '⚡', label: 'Cargas y retiros rápidos' },
+      { icon: '📲', label: 'Atención 24 hs' },
+      { icon: '🎁', label: 'Bono de bienvenida' }
+    ],
+
+    // 9) Botón final (CTA secundario)
+    secondaryCta: 'Crear usuario por WhatsApp',
+
+    // 10) Cartel de redirección (aparece al tocar un botón)
+    //     En "counting": {seconds} = número y {unit} = segundo/segundos
+    redirectToast: {
+      icon: '💬',
+      counting: 'En {seconds} {unit} vas a ser redireccionado a WhatsApp',
+      unitSingular: 'segundo',
+      unitPlural: 'segundos',
+      redirecting: 'Redireccionando a WhatsApp...'
+    },
+
+    // 11) Pie legal
+    legal: {
+      age: '+18',
+      text: '· Jugá con responsabilidad ·'
+    }
   } as const
 }
 
+// ---------- Derivados (no hace falta editar) ----------
 export const WHATSAPP_PHONE = LANDING_CONFIG.whatsapp.phone
 
 export const WHATSAPP_MESSAGE = LANDING_CONFIG.whatsapp.message
@@ -68,8 +144,8 @@ export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURICom
   WHATSAPP_MESSAGE
 )}`
 
-export const REDIRECT_ENABLED = LANDING_CONFIG.redirectEnabled
 export const REDIRECT_DELAY_SECONDS = LANDING_CONFIG.redirectDelaySeconds
 export const SHOW_OPERATIONS_INFO = LANDING_CONFIG.showOperationsInfo
+export const PAGE_META = LANDING_CONFIG.meta
 
 export const LANDING_CONTENT = LANDING_CONFIG.content

@@ -1,17 +1,29 @@
+import type { MouseEvent } from 'react'
 import { LANDING_CONTENT, WHATSAPP_URL } from '../constants/constants.config'
 import { useWhatsAppRedirect } from '../hooks/useWhatsAppRedirect'
-import RedirectToast from './RedirectToast'
 import WhatsAppIcon from './WhatsAppIcon'
 
 function LandingPage() {
-  const { toastMessage } = useWhatsAppRedirect()
-  const { ticker, brand, motivational, bonusBanner, form, trustBadges } =
-    LANDING_CONTENT
+  const { startRedirect } = useWhatsAppRedirect()
+  const {
+    ticker,
+    brand,
+    motivational,
+    bonus,
+    form,
+    steps,
+    trustBadges,
+    secondaryCta,
+    legal
+  } = LANDING_CONTENT
+
+  const handleRedirect = (event: MouseEvent<HTMLAnchorElement>) => {
+    event.preventDefault()
+    startRedirect()
+  }
 
   return (
     <>
-      {toastMessage && <RedirectToast message={toastMessage} />}
-
       <div className="jackpotTicker">
         {ticker.label} <span>{ticker.highlight}</span>
       </div>
@@ -32,7 +44,10 @@ function LandingPage() {
             {motivational.suffix}
           </p>
 
-          <p className="bonusBanner">{bonusBanner}</p>
+          <div className="bonusBanner">
+            <span className="bonusBannerTitle">{bonus.banner}</span>
+            <span className="bonusBannerExample">{bonus.example}</span>
+          </div>
 
           <section className="form" aria-label="Cargar saldo por WhatsApp">
             <h2 className="formTitle">{form.title}</h2>
@@ -47,10 +62,25 @@ function LandingPage() {
               ))}
             </div>
 
-            <a className="button" href={WHATSAPP_URL}>
+            <a className="button" href={WHATSAPP_URL} onClick={handleRedirect}>
               <WhatsAppIcon />
               {form.buttonLabel}
             </a>
+          </section>
+
+          <section className="steps" aria-label={steps.title}>
+            <h2 className="stepsTitle">{steps.title}</h2>
+            <ol className="stepsList">
+              {steps.items.map(item => (
+                <li className="step" key={item.num}>
+                  <span className="stepNum">{item.num}</span>
+                  <div className="stepBody">
+                    <strong>{item.title}</strong>
+                    <span>{item.text}</span>
+                  </div>
+                </li>
+              ))}
+            </ol>
           </section>
 
           {/* operationsInfo comentado temporalmente
@@ -98,6 +128,19 @@ function LandingPage() {
               </div>
             ))}
           </div>
+
+          <a
+            className="button buttonSecondary"
+            href={WHATSAPP_URL}
+            onClick={handleRedirect}
+          >
+            <WhatsAppIcon />
+            {secondaryCta}
+          </a>
+
+          <p className="legalFooter">
+            <span className="legalAge">{legal.age}</span> {legal.text}
+          </p>
         </section>
       </main>
     </>
