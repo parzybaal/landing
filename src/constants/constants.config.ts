@@ -46,14 +46,15 @@ export const LANDING_CONFIG = {
 
     // 4) BONO de bienvenida
     bonus: {
-      banner: '🎁 Bono de bienvenida del 50% para nuevos usuarios',
-      example: 'Cargás $ 10.000 → jugás con $ 15.000'
+      banner: '🎁 Bono de bienvenida del 50%',
+      bannerSecondLine: 'para nuevos usuarios',
+      example: ''
     },
 
     // 5) Formulario / CTA principal
     form: {
       title: 'Creá tu usuario',
-      lead: 'Hablás por WhatsApp, un asesor te crea tu cuenta y ya podes realizar la carga.',
+      lead: 'Un asesor te crea tu cuenta y ya podes jugar con nosotros',
       buttonLabel: 'Crear usuario por WhatsApp',
       quickInfo: [
         { label: 'Carga mínima', value: '$ 2.000' },
@@ -77,8 +78,8 @@ export const LANDING_CONFIG = {
         },
         {
           num: '3',
-          title: 'Cargás y jugás',
-          text: 'Haces tu deposito, se activa tu bono y empezás a divertirte.'
+          title: 'Jugas en la plataforma',
+          text: 'Activa tu bono y empeza a divertirte'
         }
       ]
     },
@@ -114,10 +115,7 @@ export const LANDING_CONFIG = {
       { icon: '🎁', label: 'Bono de bienvenida' }
     ],
 
-    // 9) Botón final (CTA secundario)
-    secondaryCta: 'Crear usuario por WhatsApp',
-
-    // 10) Cartel de redirección (aparece al tocar un botón)
+    // 9) Cartel de redirección (aparece al tocar un botón)
     //     En "counting": {seconds} = número y {unit} = segundo/segundos
     redirectToast: {
       icon: '💬',
@@ -129,8 +127,8 @@ export const LANDING_CONFIG = {
 
     // 11) Pie legal
     legal: {
-      age: '+18',
-      text: '· Jugá con responsabilidad ·'
+      age: '',
+      text: ''
     }
   } as const
 }

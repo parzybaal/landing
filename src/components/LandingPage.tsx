@@ -6,14 +6,12 @@ import WhatsAppIcon from './WhatsAppIcon'
 function LandingPage() {
   const { startRedirect } = useWhatsAppRedirect()
   const {
-    ticker,
     brand,
     motivational,
     bonus,
     form,
     steps,
     trustBadges,
-    secondaryCta,
     legal
   } = LANDING_CONTENT
 
@@ -24,10 +22,6 @@ function LandingPage() {
 
   return (
     <>
-      <div className="jackpotTicker">
-        {ticker.label} <span>{ticker.highlight}</span>
-      </div>
-
       <main>
         <section
           className="container"
@@ -45,8 +39,14 @@ function LandingPage() {
           </p>
 
           <div className="bonusBanner">
-            <span className="bonusBannerTitle">{bonus.banner}</span>
-            <span className="bonusBannerExample">{bonus.example}</span>
+            <span className="bonusBannerTitle">
+              {bonus.banner}
+              <br />
+              {bonus.bannerSecondLine}
+            </span>
+            {bonus.example !== '' && (
+              <span className="bonusBannerExample">{bonus.example}</span>
+            )}
           </div>
 
           <section className="form" aria-label="Cargar saldo por WhatsApp">
@@ -129,18 +129,11 @@ function LandingPage() {
             ))}
           </div>
 
-          <a
-            className="button buttonSecondary"
-            href={WHATSAPP_URL}
-            onClick={handleRedirect}
-          >
-            <WhatsAppIcon />
-            {secondaryCta}
-          </a>
-
-          <p className="legalFooter">
-            <span className="legalAge">{legal.age}</span> {legal.text}
-          </p>
+          {(legal.age !== '' || legal.text !== '') && (
+            <p className="legalFooter">
+              <span className="legalAge">{legal.age}</span> {legal.text}
+            </p>
+          )}
         </section>
       </main>
     </>

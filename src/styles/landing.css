@@ -41,8 +41,10 @@ body::before {
   background-repeat: no-repeat;
   background-size: cover;
   content: '';
+  filter: blur(6px);
   opacity: 0.45;
   pointer-events: none;
+  transform: scale(1.08);
 }
 
 body::after {
@@ -73,32 +75,6 @@ main {
   max-width: 420px;
   width: 100%;
   margin: 0 auto;
-}
-
-.jackpotTicker {
-  position: fixed;
-  top: 16px;
-  right: 16px;
-  z-index: 100;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 8px 14px;
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-ui);
-  background: var(--surface-elevated);
-  color: var(--foreground);
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  white-space: nowrap;
-}
-
-.jackpotTicker span {
-  margin-left: 6px;
-  color: var(--accent-gold);
-  font-size: 14px;
-  font-variant-numeric: tabular-nums;
 }
 
 .redirectToast {
@@ -202,19 +178,15 @@ main {
 }
 
 .bonusBannerTitle {
+  display: block;
   color: var(--accent-gold);
   font-family: var(--font-brand);
   font-size: 15px;
   font-weight: 700;
   letter-spacing: 0.08em;
+  line-height: 1.35;
   text-transform: uppercase;
   text-shadow: 0 0 12px rgba(212, 168, 83, 0.45);
-}
-
-.bonusBannerExample {
-  color: rgba(235, 232, 240, 0.75);
-  font-size: 12px;
-  font-weight: 600;
 }
 
 @keyframes bonusPulse {
@@ -543,12 +515,6 @@ main {
   line-height: 1.35;
 }
 
-.buttonSecondary {
-  margin-top: 16px;
-  margin-bottom: 16px;
-  animation: none;
-}
-
 .legalFooter {
   display: flex;
   flex-wrap: wrap;
@@ -590,14 +556,6 @@ main {
   main {
     align-items: flex-start;
     padding-top: 72px;
-  }
-
-  .jackpotTicker {
-    top: 12px;
-    right: auto;
-    left: 50%;
-    max-width: calc(100vw - 24px);
-    transform: translateX(-50%);
   }
 
   .redirectToast {
