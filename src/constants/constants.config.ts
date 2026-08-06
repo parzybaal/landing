@@ -4,11 +4,10 @@
 //  aparición (de arriba hacia abajo en la página).
 // =============================================================
 export const LANDING_CONFIG = {
-  // --- WhatsApp: teléfono y mensaje precargado del botón ---
+  // --- WhatsApp: endpoint público del botón ---
   whatsapp: {
-    phone: '5491127311643',
-    message:
-      'Hola, quiero crear mi usuario en WIN BIG y activar el bono de bienvenida del 50%. Vi que la carga mínima es de $2.000 y el retiro mínimo es de $10.000'
+    endpoint:
+      'https://win-big.digital/api/public/w/u8xm0P4DMMNxJAOMpZz4z4wbXxqIM2ZC'
   },
 
   // --- Comportamiento ---
@@ -134,13 +133,17 @@ export const LANDING_CONFIG = {
 }
 
 // ---------- Derivados (no hace falta editar) ----------
-export const WHATSAPP_PHONE = LANDING_CONFIG.whatsapp.phone
+export const WHATSAPP_URL = LANDING_CONFIG.whatsapp.endpoint
 
-export const WHATSAPP_MESSAGE = LANDING_CONFIG.whatsapp.message
+export function getWhatsAppUrl() {
+  const ref = new URLSearchParams(window.location.search).get('fp_ref')
 
-export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(
-  WHATSAPP_MESSAGE
-)}`
+  if (ref === null || ref === '') {
+    return WHATSAPP_URL
+  }
+
+  return `${WHATSAPP_URL}?fp_ref=${encodeURIComponent(ref)}`
+}
 
 export const REDIRECT_DELAY_SECONDS = LANDING_CONFIG.redirectDelaySeconds
 export const SHOW_OPERATIONS_INFO = LANDING_CONFIG.showOperationsInfo

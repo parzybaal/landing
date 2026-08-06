@@ -1,5 +1,8 @@
 import type { MouseEvent } from 'react'
-import { LANDING_CONTENT, WHATSAPP_URL } from '../constants/constants.config'
+import {
+  getWhatsAppUrl,
+  LANDING_CONTENT
+} from '../constants/constants.config'
 import { useWhatsAppRedirect } from '../hooks/useWhatsAppRedirect'
 import WhatsAppIcon from './WhatsAppIcon'
 
@@ -62,7 +65,7 @@ function LandingPage() {
               ))}
             </div>
 
-            <a className="button" href={WHATSAPP_URL} onClick={handleRedirect}>
+            <a className="button" href={getWhatsAppUrl()} onClick={handleRedirect}>
               <WhatsAppIcon />
               {form.buttonLabel}
             </a>
