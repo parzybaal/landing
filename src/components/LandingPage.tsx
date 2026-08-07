@@ -28,7 +28,7 @@ function LandingPage() {
       <main>
         <section
           className="container"
-          aria-label="Win Big cajeros por WhatsApp"
+          aria-label="Win Big plataforma de juegos"
         >
           <header className="logo">
             <div className="hotBadge">{brand.hotBadge}</div>
@@ -37,8 +37,7 @@ function LandingPage() {
           </header>
 
           <p className="motivationalText">
-            {motivational.prefix} <span>{motivational.highlight}</span>{' '}
-            {motivational.suffix}
+            <span>{motivational.highlight}</span>
           </p>
 
           <div className="bonusBanner">
@@ -47,12 +46,9 @@ function LandingPage() {
               <br />
               {bonus.bannerSecondLine}
             </span>
-            {bonus.example !== '' && (
-              <span className="bonusBannerExample">{bonus.example}</span>
-            )}
           </div>
 
-          <section className="form" aria-label="Cargar saldo por WhatsApp">
+          <section className="form" aria-label="Crear usuario por WhatsApp">
             <h2 className="formTitle">{form.title}</h2>
             <p className="lead">{form.lead}</p>
 
@@ -86,43 +82,6 @@ function LandingPage() {
             </ol>
           </section>
 
-          {/* operationsInfo comentado temporalmente
-          <details
-            className="liveStats"
-            open
-            aria-label="Informacion de operaciones"
-          >
-            <summary>{operationsInfo.summary}</summary>
-            <div className="statsContent">
-              {operationsInfo.tiers.map(tier => (
-                <div className="stat" key={tier.amount}>
-                  <div className="statValue">
-                    {tier.conditionLines.map(line => (
-                      <span key={line}>
-                        {line}
-                        <br />
-                      </span>
-                    ))}
-                  </div>
-                  <div className="statLabel">
-                    {tier.withdrawalLabel}
-                    <span className="statAmount">{tier.amount}</span>
-                    <small>{tier.period}</small>
-                  </div>
-                </div>
-              ))}
-              <div className="paymentStat">
-                {operationsInfo.paymentMethodLines.map(line => (
-                  <span key={line}>
-                    {line}
-                    <br />
-                  </span>
-                ))}
-              </div>
-            </div>
-          </details>
-          */}
-
           <div className="trustBadges">
             {trustBadges.map(badge => (
               <div className="trustBadge" key={badge.label}>
@@ -132,11 +91,11 @@ function LandingPage() {
             ))}
           </div>
 
-          {(legal.age !== '' || legal.text !== '') && (
-            <p className="legalFooter">
-              <span className="legalAge">{legal.age}</span> {legal.text}
-            </p>
-          )}
+          <footer className="legalFooter">
+            <a className="legalLink" href={legal.privacyHref}>
+              {legal.privacyLabel}
+            </a>
+          </footer>
         </section>
       </main>
     </>

@@ -12,12 +12,12 @@ export const LANDING_CONFIG = {
 
   // --- Comportamiento ---
   redirectDelaySeconds: 4, // segundos del cartel antes de ir a WhatsApp
-  showOperationsInfo: false, // mostrar/ocultar la sección de cargas y retiros
 
   // --- Título de la pestaña / SEO ---
   meta: {
-    title: 'Carga de Fichas | Win Big',
-    description: 'Win Big: cargas, retiros y atención por WhatsApp con cajeros.'
+    title: 'Plataforma de jueg0s | Win Big',
+    description:
+      'Win Big: plataforma de juegos.'
   },
 
   // =================== TEXTOS DE LA PÁGINA ===================
@@ -25,7 +25,7 @@ export const LANDING_CONFIG = {
   content: {
     // 1) Cartelito de la esquina superior
     ticker: {
-      label: 'Cargas activas',
+      label: 'Usuarios activ0s',
       highlight: '24/7'
     },
 
@@ -33,37 +33,34 @@ export const LANDING_CONFIG = {
     brand: {
       hotBadge: '🔥 En vivo',
       title: 'WIN BIG',
-      subtitle: 'Divertite y ganá'
+      subtitle: 'Plataform4 de jueg0s'
     },
 
     // 3) Frase motivacional (el "highlight" se muestra resaltado en dorado)
     motivational: {
-      prefix: '✨ Tu mejor jugada empieza acá,',
-      highlight: '¡este es tu momento!',
-      suffix: '✨'
+      highlight: '¡ESTE ES TU MOMENT0!'
     },
 
     // 4) BONO de bienvenida
     bonus: {
-      banner: '🎁 Bono de bienvenida del 50%',
-      bannerSecondLine: 'para nuevos usuarios',
-      example: ''
+      banner: '🎁 Bon0 de bienven1da del 5O%',
+      bannerSecondLine: 'para nuevos usuari0s'
     },
 
     // 5) Formulario / CTA principal
     form: {
-      title: 'Creá tu usuario',
-      lead: 'Un asesor te crea tu cuenta y ya podes jugar con nosotros',
-      buttonLabel: 'Crear usuario por WhatsApp',
+      title: 'Creá tu usuari0',
+      lead: 'Un asesor te crea tu cuent4 y ya podes empezar a jug4r',
+      buttonLabel: 'Crear usu4rio por WhatsApp',
       quickInfo: [
-        { label: 'Carga mínima', value: '$ 2.000' },
-        { label: 'Retiro mínimo', value: '$ 10.000' }
+        { label: 'C4rga mínima', value: '$ 2.000' },
+        { label: 'Retir0 mínim0', value: '$ 10.000' }
       ]
     },
 
     // 6) Pasos para empezar
     steps: {
-      title: 'En 3 pasos ya podes jugar',
+      title: 'En 3 pasos ya podes jug4r',
       items: [
         {
           num: '1',
@@ -72,46 +69,22 @@ export const LANDING_CONFIG = {
         },
         {
           num: '2',
-          title: 'Creamos tu usuario',
-          text: 'Un asesor te crea tu cuenta al instante.'
+          title: 'Creamos tu usu4rio',
+          text: 'Un asesor te crea tu cuent4 al instante.'
         },
         {
           num: '3',
-          title: 'Jugas en la plataforma',
-          text: 'Activa tu bono y empeza a divertirte'
+          title: 'Jug4s en la plataforma',
+          text: 'Act1va tu b0no y empeza a divertirte'
         }
       ]
     },
 
-    // 7) (Opcional) Info de cargas y retiros — desactivada con "showOperationsInfo"
-    // operationsInfo: {
-    //   summary: 'Informacion sobre cargas y retiros',
-    //   tiers: [
-    //     {
-    //       conditionLines: ['Si cargas menos', 'De $ 30.000'],
-    //       withdrawalLabel: 'Retiros hasta',
-    //       amount: '$ 100.000',
-    //       period: 'POR DIA'
-    //     },
-    //     {
-    //       conditionLines: ['Si cargas mas', 'De $ 30.000'],
-    //       withdrawalLabel: 'Retiros hasta',
-    //       amount: '$ 200.000',
-    //       period: 'POR DIA'
-    //     }
-    //   ],
-    //   paymentMethodLines: [
-    //     'Cargas por transferencia bancaria',
-    //     'O cualquier cryptomoneda'
-    //   ]
-    // },
-
-    // 8) Insignias de confianza
     trustBadges: [
       { icon: '🔒', label: 'Plataforma segura' },
-      { icon: '⚡', label: 'Cargas y retiros rápidos' },
+      { icon: '⚡', label: 'Acceso rápido' },
       { icon: '📲', label: 'Atención 24 hs' },
-      { icon: '🎁', label: 'Bono de bienvenida' }
+      { icon: '🎁', label: 'B0no de bienvenida' }
     ],
 
     // 9) Cartel de redirección (aparece al tocar un botón)
@@ -124,10 +97,10 @@ export const LANDING_CONFIG = {
       redirecting: 'Redireccionando a WhatsApp...'
     },
 
-    // 11) Pie legal
+    // 10) Pie / privacidad
     legal: {
-      age: '',
-      text: ''
+      privacyLabel: 'Política de privacidad',
+      privacyHref: '/privacidad.html'
     }
   } as const
 }
@@ -146,7 +119,6 @@ export function getWhatsAppUrl() {
 }
 
 export const REDIRECT_DELAY_SECONDS = LANDING_CONFIG.redirectDelaySeconds
-export const SHOW_OPERATIONS_INFO = LANDING_CONFIG.showOperationsInfo
 export const PAGE_META = LANDING_CONFIG.meta
 
 export const LANDING_CONTENT = LANDING_CONFIG.content
