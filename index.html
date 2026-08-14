@@ -20,20 +20,27 @@
       !(function (f, b, e, v, n, t, s) {
         if (f.fbq) return
         n = f.fbq = function () {
-          n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+          n.callMethod
+            ? n.callMethod.apply(n, arguments)
+            : n.queue.push(arguments)
         }
         if (!f._fbq) f._fbq = n
         n.push = n
-        n.loaded = true
+        n.loaded = !0
         n.version = '2.0'
         n.queue = []
         t = b.createElement(e)
-        t.async = true
+        t.async = !0
         t.src = v
         s = b.getElementsByTagName(e)[0]
         s.parentNode.insertBefore(t, s)
-      })(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js')
-      fbq('init', '995846953506092')
+      })(
+        window,
+        document,
+        'script',
+        'https://connect.facebook.net/en_US/fbevents.js'
+      )
+      fbq('init', '4674728556184567')
       fbq('track', 'PageView')
     </script>
     <!-- End Meta Pixel Code -->
@@ -64,16 +71,15 @@
       ></iframe
     ></noscript>
     <!-- End Google Tag Manager (noscript) -->
-    <!-- Meta Pixel Code (noscript) -->
+    <!-- Meta Pixel Code -->
     <noscript
       ><img
         height="1"
         width="1"
         style="display: none"
-        src="https://www.facebook.com/tr?id=995846953506092&ev=PageView&noscript=1"
-        alt=""
+        src="https://www.facebook.com/tr?id=4674728556184567&ev=PageView&noscript=1"
     /></noscript>
-    <!-- End Meta Pixel Code (noscript) -->
+    <!-- End Meta Pixel Code -->
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
